@@ -1,5 +1,4 @@
 # this Script is used to select useful variables from POAMA file
-# then write them into new file
 
 require("ncdf4")
 
@@ -11,13 +10,14 @@ root <- "E:/climateData/POAMA2.4/A/"
 fList <- list.files(root,recursive = TRUE)
 
 fNum <- length(fList)
-newFileName <- "E:/climateData/POAMA2.4/POAMA_A_24prcp.nc"
-ncidNew <- nc_open(newFileName,write=TRUE)
-
+# fNum <- 1
+prcp_A_max <- array(,c(3,3,9,fNum))
 for(i in 1:fNum){
-  oriFileName <- paste0(root,fList[i])
-  ncidOri <- nc_open(oriFileName,write=FALSE)
+  fileName <- paste0(root,fList[i])
+  ncid <- nc_open(fileName,write=FALSE)
   var <- 'hr24_prcp'
-  hr24_prcp <- ncvar_get(ncidOri,var)
-  nc_close(ncidOri)
+  start <- c(58,50,1)
+  count <- c(3,3,9)
+  prcp_A_max[,,,i] <- ncvar_get(ncid,var,start=start,count=count)
+  nc_close(ncid)
 }
