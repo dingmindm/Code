@@ -19,5 +19,5 @@ for(i in 1:fNum){
   start <- c(58,50,1)
   count <- c(3,3,9)
   prcp_A_max[,,,i] <- ncvar_get(ncid,var,start=start,count=count)
-  nc_close(ncid)
+  ncid<-nc_close(ncid)
 }

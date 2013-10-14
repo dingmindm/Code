@@ -1,8 +1,8 @@
 require("ncdf4")
 rm(list = ls(all = TRUE))
 
-#filename ="E:/IORFm_198605.nc" #"Indian Ocean Dipole", "El Nino Modoki Index
-filename = "E:/IOF_1960_2011.nc"
+filename ="E:/IORFm_201012.nc" #"Indian Ocean Dipole", "El Nino Modoki Index
+#filename = "E:/climateData/POAMA2.4/IOF_1960_2011.nc"
 
 # show the dimension information of selected NC file
 nc <- nc_open( filename )
@@ -18,5 +18,6 @@ for( i in 1:nc$ndims ) {
     print(paste(" Unlimited:",d$unlim))
   }
 print(nc)
-tVar<-ncvar_get(nc,"nino3")
-#tVar<-ncvar_get(nc,"index_long_name")
+tVar<-ncvar_get(nc,"region_index")
+#tVar<-ncvar_get(nc,"region_name")
+#nc<-nc_close(nc)
