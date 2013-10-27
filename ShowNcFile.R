@@ -2,9 +2,9 @@ require("ncdf4")
 rm(list = ls(all = TRUE))
 
 ##
-#filename = "D:/data/mac_19810101.nc" #24hr_prep
-#filename = "D:/data/mo_201109.nc"   #TEMP
-filename = "E:/climateData/POAMA2.4/IOF_1960_2011.nc" #SST anomaly
+filename = "E:/climateData/POAMA2.4/A/mac_19810101.nc" #24hr_prep
+#filename = "E:/climateData/POAMA2.4/Ocean/mo_198101.nc"   #TEMP
+#filename = "E:/climateData/POAMA2.4/IOF_1960_2011.nc" #SST anomaly
 ##
 
 #filename ="D:/data/heatflux_input_2011.nc"
@@ -29,8 +29,11 @@ for( i in 1:nc$ndims ) {
     print(paste(" Unlimited:",d$unlim))
   }
 print(nc)
+d =  nc$dim[[2]]
+dv = d$vals
 tVar<-ncvar_get(nc,"TEMP")
 dim(tVar)
+
 #tVar<-ncvar_get(nc,"sfc_temp")
 #tVar<-ncvar_get(nc,"region_index")
 #tVar<-ncvar_get(nc,"region_name")

@@ -1,6 +1,6 @@
 rm(list=ls())
 # load point data
-load("ref.station.RData")
+load("D:/data/ref.station.RData")
 names(ref.station)
 station <- ref.station$sites
 # compare Lat Lon, select usefull station
@@ -11,7 +11,7 @@ selStation <- data.frame()
 # (142.5)<=Lon<=(147.5)
 
 for(i in 1:sNum){
-  if(station$Lat[i]<=-33.51634 && station$Lat[i]>= -38.48167 && station$Lon[i]>=142.5 && station$Lon[i]<=147.5)
+  if(station$Lat[i]<=-32.27634 && station$Lat[i]>= -39.72167 && station$Lon[i]>=141.25 && station$Lon[i]<=148.75)
     selStation <- rbind(selStation,station[i,])
 }
 
