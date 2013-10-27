@@ -22,4 +22,5 @@ wp <- ncvar_get(nc,"wp",start=sP,count=count)
 ep <- ncvar_get(nc,"ep",start=sP,count=count)
 emi <- ncvar_get(nc,"emi",start=sP,count=count)
 
-save(nino3,nino4,nino34,iode,iodw,iod,gbr,ningaloo,cp,wp,ep,emi,file="index.Rdata")
+save(nino3,nino4,nino34,iode,iodw,iod,file="nino_id.Rdata")
+#save(nino3,nino4,nino34,iode,iodw,iod,gbr,ningaloo,cp,wp,ep,emi,file="index.Rdata")
