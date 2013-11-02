@@ -6,6 +6,8 @@ filename = "E:/climateData/POAMA2.4/A/mac_19810101.nc" #24hr_prep
 #filename = "E:/climateData/POAMA2.4/Ocean/mo_198101.nc"   #TEMP
 #filename = "E:/climateData/POAMA2.4/IOF_1960_2011.nc" #SST anomaly
 ##
+#filename = "E:/ersst.201309.nc"
+#filename = "E:/mn_201105.nc"
 
 #filename ="D:/data/heatflux_input_2011.nc"
 #filename = "D:/data/IORFm_201109.nc"
